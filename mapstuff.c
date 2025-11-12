@@ -1,6 +1,4 @@
-#include "libft.h"
-#include <stdio.h>
-
+#include "so_long.h"
 
 // create a big struct
 typedef struct s_point
@@ -59,7 +57,7 @@ void	fill(char **area, t_point size, t_point vec, char to_fill)
 		area[vec.y][vec.x] != to_fill)
 		return ;
 	if (area[vec.x][vec.y] == 'C')
-		c_count++;//coint got
+		c_count++;//coint got create this in the big struct
 	if (area[vec.x][vec.y] == 'E')
 		e_count++;//coint got
 	area[vec.y][vec.x] = 'F';
@@ -67,9 +65,10 @@ void	fill(char **area, t_point size, t_point vec, char to_fill)
 	fill(area, size, (t_point){vec.x + 1, vec.y}, to_fill);
 	fill(area, size, (t_point){vec.x, vec.y - 1}, to_fill);
 	fill(area, size, (t_point){vec.x, vec.y + 1}, to_fill);
-	if (e_count > 0 && c_count > 2)
-	return (1)
+
+		
 }
+
 int main()
 {
 
@@ -82,12 +81,12 @@ int main()
 	map_size.x = 50;//width
 	map_size.y = 70;//heigth
  	map = make_map("aaa.ber");
-	fill(map, map_size, coords, )
+	//fill(map, map_size, coords, )
 	int i = 0;
 
 	while(map[i])
 	{
-		printf("%s\n", map[i]);
+		ft_printf("%s\n", map[i]);
 		free(map[i]);
 		i++;
 	}
