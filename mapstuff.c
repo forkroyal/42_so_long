@@ -34,7 +34,8 @@ char **make_map(char *mapfile)
 	{
 		map[row] = get_next_line(fd);
 		last = ft_strlen(map[row]);
-		map[row][last - 1] = '\0';
+		if (map[row][last - 1] == '\n')
+			map[row][last - 1] = '\0';	
 		row++;
 	}
 	map[line_count] = NULL;
