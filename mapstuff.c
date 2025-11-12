@@ -1,5 +1,11 @@
-#include "get_next_line.h"
+#include "libft.h"
 #include <stdio.h>
+
+typedef struct s_point
+{
+	int x;
+	int y;
+}	t_point;
 
 int	count_lines(char *mapfile)
 {
@@ -43,11 +49,38 @@ char **make_map(char *mapfile)
 	return (map);
 }
 
+void	fill(char **area, t_point size, t_point vec, char to_fill)
+{
+	static int c_count = 0;
+	static int e_count = 0;
+	if (vec.y < 0 || vec.y >= size.y || vec.x < 0 || vec.x >= size.x || \
+		area[vec.y][vec.x] != to_fill)
+		return ;
+	if (area[vec.x][vec.y] == 'C')
+		c_count++;//coint got
+	if (area[vec.x][vec.y] == 'E')
+		e_count++;//coint got
+	area[vec.y][vec.x] = 'F';
+	fill(area, size, (t_point){vec.x - 1, vec.y}, to_fill);
+	fill(area, size, (t_point){vec.x + 1, vec.y}, to_fill);
+	fill(area, size, (t_point){vec.x, vec.y - 1}, to_fill);
+	fill(area, size, (t_point){vec.x, vec.y + 1}, to_fill);
+	if (e_count > 0 && c_count > 2)
+	return (1)
+}
 int main()
 {
 
 	char **map;
-	map = make_map("aaa.ber");
+	t_point coords;
+	t_point map_size;
+
+	coords.x = 0;//player x pos
+	coords.y = 0;//player y pos
+	map_size.x = 50;//width
+	map_size.y = 70;//heigth
+ 	map = make_map("aaa.ber");
+	fill(map, map_size, coords, )
 	int i = 0;
 
 	while(map[i])
@@ -57,4 +90,5 @@ int main()
 		i++;
 	}
 	free(map);
+	
 }
