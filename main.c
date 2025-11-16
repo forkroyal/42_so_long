@@ -33,9 +33,18 @@ int main()
 	else
 		ft_printf("ERROR: Map is not rectangular\n");
 
+	int filling_valid = check_signs(map);
+
+	if (filling_valid == 1)
+		ft_printf("Map is filled correct\n");
+	else
+		ft_printf("ERROR: Map is not filled correct\n");
 
 
 
+
+
+	ft_printf("\n");
 	while(map[i])
 	{
 		ft_printf("%s\n", map[i]);

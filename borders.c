@@ -31,7 +31,7 @@ int	check_borders(char **map, int xmax, int ymax)
 int	check_form(char **map)
 {
 	int	i;
-	int firstline_len;
+	int	firstline_len;
 
 	firstline_len = ft_strlen(map[0]);
 	i = 1;
@@ -39,6 +39,28 @@ int	check_form(char **map)
 	{
 		if (ft_strlen(map[i]) != firstline_len)
 			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	check_signs(char **map)
+{
+	int		i;
+	int		j;
+	char	*valid_signs;
+
+	valid_signs = "pce01";
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (!(ft_strchr(valid_signs, map[i][j])))
+				return (0);
+			j++;
+		}
 		i++;
 	}
 	return (1);
