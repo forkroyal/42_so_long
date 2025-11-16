@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/16 14:40:25 by fsitter          ###   ########.fr       */
+/*   Created: 2025/09/29 13:11:15 by fsitter           #+#    #+#             */
+/*   Updated: 2025/10/11 14:14:54 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#include "libft.h"
 
-# include "libft/libft.h"
+int	ft_isprint(int c);
 
-
-
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
-
-int count_of(char **s, char c);
-int	check_borders(char **s, int xmax, int ymax);
-
-
-
-// typedef struct s_point
-// {
-// 	int x;
-// } t_point
-
-# endif
+int	ft_isprint(int c)
+{
+	return (c >= 32 && c <= 126);
+}

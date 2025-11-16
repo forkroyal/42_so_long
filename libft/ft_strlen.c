@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/16 14:40:25 by fsitter          ###   ########.fr       */
+/*   Created: 2025/09/29 13:14:17 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/12 13:54:18 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#include "libft.h"
 
-# include "libft/libft.h"
+size_t	ft_strlen(const char *s);
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
-
-int count_of(char **s, char c);
-int	check_borders(char **s, int xmax, int ymax);
-
-
-
-// typedef struct s_point
-// {
-// 	int x;
-// } t_point
-
-# endif
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}

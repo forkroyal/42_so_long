@@ -25,11 +25,7 @@ int	check_borders(char **s, int xmax, int ymax)
 			return (0);
 		j++;
 	}
+	return (1);
 }
 
 // eventuell int check_borders(char **map, int xmax, int xmin)
-
-int main()
-{
-	
-}

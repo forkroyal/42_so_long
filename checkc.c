@@ -17,10 +17,10 @@ int check_c(char **s)
 	return (c_count);
 }
 
-int main()
-{
-	char *hello[] = {"hello", "cousin", NULL};
+// int main()
+// {
+// 	char *hello[] = {"hello", "cousin", NULL};
 
-	//printf("%c\n", hello[0][2]);
-	printf("%i\n", check_c(hello));
-}
+// 	//printf("%c\n", hello[0][2]);
+// 	printf("%i\n", check_c(hello));
+// }

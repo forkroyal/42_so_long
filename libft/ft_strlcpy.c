@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/16 14:40:25 by fsitter          ###   ########.fr       */
+/*   Created: 2025/09/30 12:01:08 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/12 13:54:23 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#include "libft.h"
 
-# include "libft/libft.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
 
-
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
-
-int count_of(char **s, char c);
-int	check_borders(char **s, int xmax, int ymax);
-
-
-
-// typedef struct s_point
-// {
-// 	int x;
-// } t_point
-
-# endif
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && (size - 1) > i)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}

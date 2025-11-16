@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/16 14:40:25 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/01 14:03:58 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/12 13:53:57 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#include "libft.h"
 
-# include "libft/libft.h"
+char	*ft_strrchr(const char *s, int c);
 
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*last;
 
-
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
-
-int count_of(char **s, char c);
-int	check_borders(char **s, int xmax, int ymax);
-
-
-
-// typedef struct s_point
-// {
-// 	int x;
-// } t_point
-
-# endif
+	last = NULL;
+	while (*s)
+	{
+		if (*(unsigned char *)s == (unsigned char)c)
+		{
+			last = (char *)s;
+		}
+		s++;
+	}
+	if (*(unsigned char *)s == (unsigned char)c)
+	{
+		return ((char *)s);
+	}
+	return (last);
+}

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/16 14:40:25 by fsitter          ###   ########.fr       */
+/*   Created: 2025/10/06 16:43:44 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/12 13:55:07 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#include "libft.h"
 
-# include "libft/libft.h"
+void	ft_putnbr_fd(int n, int fd);
 
+void	ft_putnbr_fd(int n, int fd)
+{
+	long long	number;
 
-
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
-
-int count_of(char **s, char c);
-int	check_borders(char **s, int xmax, int ymax);
-
-
-
-// typedef struct s_point
-// {
-// 	int x;
-// } t_point
-
-# endif
+	number = n;
+	if (number < 0)
+	{
+		write(fd, "-", 1);
+		number *= -1;
+	}
+	while (number > 9)
+	{
+		ft_putnbr_fd(number / 10, fd);
+		number %= 10;
+	}
+	number = number + 48;
+	write(fd, &number, 1);
+}
