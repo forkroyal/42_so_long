@@ -1,34 +1,47 @@
-int	check_borders(char **s, int xmax, int ymax)
+#include "so_long.h"
+
+int	check_borders(char **map, int xmax, int ymax)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (s[i][j])
+	while (map[i][j])
 	{
-		if (s[i][j++] != '1')
+		if (map[i][j++] != '1')
 			return (0);
 	}
 	i = 0;
-	while (s[i])
+	while (map[i])
 	{
-		if (s[i][0] != '1' || s[i][xmax] != '1')
+		if (map[i][0] != '1' || map[i][xmax] != '1')
 			return (0);
 		i++;
 	}
 	j = 0;
-	while (s[ymax][j])
+	while (map[ymax][j])
 	{
-		if (s[ymax][j++] != '1')
+		if (map[ymax][j++] != '1')
 			return (0);
 	}
 	return (1);
 }
 
-int check_form(char **s)
+int	check_form(char **map)
 {
-	
+	int	i;
+	int firstline_len;
+
+	firstline_len = ft_strlen(map[0]);
+	i = 1;
+	while (map[i])
+	{
+		if (ft_strlen(map[i]) != firstline_len)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 // eventuell int check_borders(char **map, int xmax, int xmin)

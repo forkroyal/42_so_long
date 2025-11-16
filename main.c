@@ -19,12 +19,22 @@ int main()
 
 	ft_printf("%i\n", ft_strlen(map[0]) -1);
 
-	int b = check_borders(map, (ft_strlen(map[0])) - 1, count_lines("aaa.ber") - 1);
+	int borders = check_borders(map, (ft_strlen(map[0])) - 1, count_lines("aaa.ber") - 1);
 
-	if (b == 1)
+	if (borders == 1)
 		ft_printf("Borders are closed\n");
 	else
-		ft_printf("Borders are open\n");
+		ft_printf("ERROR: Borders are open\n");
+
+	int form = check_form(map);
+
+	if (form == 1)
+		ft_printf("Map is rectangular\n");
+	else
+		ft_printf("ERROR: Map is not rectangular\n");
+
+
+
 
 	while(map[i])
 	{

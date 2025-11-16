@@ -1,14 +1,14 @@
 #include <stdio.h>
-int count_of(char **s, char c)
+int count_of(char **map, char what_to_find)
 {
 	int c_count = 0;
 	int i = 0;
-	while(s[i])
+	while(map[i])
 	{
 		int j = 0;
-		while(s[i][j])
+		while(map[i][j])
 		{
-			if (s[i][j] == c)
+			if (map[i][j] == what_to_find)
 				c_count++;
 			j++;
 		}
