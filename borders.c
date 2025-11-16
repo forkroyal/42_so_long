@@ -7,9 +7,8 @@ int	check_borders(char **s, int xmax, int ymax)
 	j = 0;
 	while (s[i][j])
 	{
-		if (s[i][j] != '1')
+		if (s[i][j++] != '1')
 			return (0);
-		j++;
 	}
 	i = 0;
 	while (s[i])
@@ -21,9 +20,8 @@ int	check_borders(char **s, int xmax, int ymax)
 	j = 0;
 	while (s[ymax][j])
 	{
-		if (s[ymax][j] != '1')
+		if (s[ymax][j++] != '1')
 			return (0);
-		j++;
 	}
 	return (1);
 }
