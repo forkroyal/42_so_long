@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/18 17:08:40 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/18 17:10:50 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	**make_map(char *mapfile)
 	line_count = count_lines(mapfile);
 	map = malloc(sizeof(char *) * (line_count + 1));
 	if (!map)
-		return (0);
+		return (ft_putstr_fd("Error: malloc error\n", 2), NULL);
 	row = 0;
 	while (row < line_count)
 	{
