@@ -2,6 +2,10 @@
 	MAPSTUFF.c notes darunter beachten
 	MAPSTUFF.c notes darunter beachten
 
+	function machen fillstruct darin make_map
+	muss ich dann die struct als pointer machen?
+	oder zumindest als pointer übergeben
+
 Map:
 
 	DONE! function to check if there are other signs then the ones allowed
