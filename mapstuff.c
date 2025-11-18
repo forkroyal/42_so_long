@@ -1,7 +1,7 @@
 #include "so_long.h"
 
-int	count_lines(char *mapfile);
-char **make_map(char *mapfile);
+int		count_lines(char *mapfile);
+char	**make_map(char *mapfile);
 
 int	count_lines(char *mapfile)
 {
@@ -11,8 +11,11 @@ int	count_lines(char *mapfile)
 
 	fd = open(mapfile, O_RDONLY);
 	line_count = 0;
-	while ((a = get_next_line(fd)))
+	while ((1))
 	{
+		a = get_next_line(fd);
+		if (a == NULL)
+			break ;
 		line_count++;
 		free(a);
 	}
@@ -20,7 +23,7 @@ int	count_lines(char *mapfile)
 	return (line_count);
 }
 
-char **make_map(char *mapfile)
+char	**make_map(char *mapfile)
 {
 	int		line_count;
 	char	**map;
@@ -39,7 +42,7 @@ char **make_map(char *mapfile)
 		map[row] = get_next_line(fd);
 		last = ft_strlen(map[row]);
 		if (map[row][last - 1] == '\n')
-			map[row][last - 1] = '\0';	
+			map[row][last - 1] = '\0';
 		row++;
 	}
 	map[line_count] = NULL;
@@ -64,5 +67,9 @@ char **make_map(char *mapfile)
 // 	fill(area, size, (t_point){vec.x, vec.y - 1}, to_fill);
 // 	fill(area, size, (t_point){vec.x, vec.y + 1}, to_fill);
 
-		
+// }
+
+// int	main(void)
+// {
+// 	ft_printf("%i\n", count_lines("aaa.ber"));
 // }

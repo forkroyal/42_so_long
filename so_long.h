@@ -6,12 +6,12 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/18 13:18:13 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/18 14:21:26 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLONG_H
-# define SOLONG_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 # include "libft/libft.h"
 
@@ -28,6 +28,9 @@ int			check_form(char **map);
 int			check_signs(char **map);
 void		find_sign(char **map, char to_find, int *x, int *y);
 
+// comandline_input.c
+int			check_input(int argc, char *argv);
+
 // struct to safe mapdata
 struct		s_mapdata
 {
@@ -35,7 +38,7 @@ struct		s_mapdata
 	int		player_c;
 	int		exit_c;
 	int		coin_c;
-	int 	map_width;
+	int		map_width;
 	int		map_height;
 	int		playerposition_x;
 	int		playerposition_y;
@@ -49,6 +52,5 @@ typedef struct s_point
 	int		x;
 	int		y;
 }			t_point;
-
 
 #endif

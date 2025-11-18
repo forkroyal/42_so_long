@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   borders.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 14:17:43 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/18 14:18:53 by fsitter          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-int	check_borders(char **map, int xmax, int ymax);
-int	check_form(char **map);
-int	check_signs(char **map);
-void find_sign(char **map, char to_find, int *x, int *y);
+int		check_borders(char **map, int xmax, int ymax);
+int		check_form(char **map);
+int		check_signs(char **map);
+void	find_sign(char **map, char to_find, int *x, int *y);
 
 int	check_borders(char **map, int xmax, int ymax)
 {
@@ -71,10 +83,10 @@ int	check_signs(char **map)
 	return (1);
 }
 
-void find_sign(char **map, char to_find, int *x, int *y)
+void	find_sign(char **map, char to_find, int *x, int *y)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (map[i])
@@ -86,7 +98,7 @@ void find_sign(char **map, char to_find, int *x, int *y)
 			{
 				*x = i;
 				*y = j;
-				return;
+				return ;
 			}
 			j++;
 		}
