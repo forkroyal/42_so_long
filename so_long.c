@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 		return (1);
 	fill_mapdata(mapdata, argv[1]);
 
-	ft_printf("%i\n", sizeof(mapdata->map_height));
+	ft_printf("%i\n", mapdata->map_height);
 }
 
 // += t_data data; // for window zeile 18
