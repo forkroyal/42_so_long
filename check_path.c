@@ -10,6 +10,7 @@ int fill_mapdata(struct s_mapdata *data, char *mapfile);
 
 
 
+
 // }
 
 int fill_mapdata(struct s_mapdata *data, char *mapfile)

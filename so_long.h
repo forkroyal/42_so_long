@@ -32,10 +32,6 @@ void		find_sign(char **map, char to_find, int *x, int *y);
 int			check_input(int argc, char *argv);
 int			check_fd(char *argv);
 
-// check_path.c
-// int			check_path(struct s_mapdata mapdata);
-int			fill_mapdata(struct s_mapdata *data, char *mapfile);
-
 // struct to safe mapdata
 struct		s_mapdata
 {
@@ -57,5 +53,10 @@ typedef struct s_point
 	int		x;
 	int		y;
 }			t_point;
+
+// check_path.c
+// int			check_path(struct s_mapdata mapdata);
+int			fill_mapdata(struct s_mapdata *data, char *mapfile);
+
 
 #endif

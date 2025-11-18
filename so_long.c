@@ -14,13 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_mapdata	*mapdata;
+	struct s_mapdata	mapdata;
 
 	if (check_input(argc, argv[1]) == 0)
 		return (1);
-	fill_mapdata(mapdata, argv[1]);
+	fill_mapdata(&mapdata, argv[1]);
 
-	ft_printf("%i\n", mapdata->map_height);
+	ft_printf("%i\n", mapdata.map_height);
+	ft_printf("hello");
 }
 
 // += t_data data; // for window zeile 18
