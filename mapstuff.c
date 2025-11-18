@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mapstuff.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
+/*   Updated: 2025/11/18 14:50:01 by fsitter          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int		count_lines(char *mapfile);
@@ -9,9 +21,10 @@ int	count_lines(char *mapfile)
 	int		line_count;
 	char	*a;
 
+	a = NULL;
 	fd = open(mapfile, O_RDONLY);
 	line_count = 0;
-	while ((1))
+	while (1)
 	{
 		a = get_next_line(fd);
 		if (a == NULL)
@@ -19,6 +32,7 @@ int	count_lines(char *mapfile)
 		line_count++;
 		free(a);
 	}
+	a = NULL;
 	close(fd);
 	return (line_count);
 }
