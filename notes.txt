@@ -5,8 +5,10 @@
 	function machen fillstruct darin make_map
 	muss ich dann die struct als pointer machen?
 	oder zumindest als pointer übergeben > ja das
-int check_path(struct mapdata)function > mapcopy = Malloc/calloc(sizeof(map(+1?)); int i =0; while(mapcopy){ strdup(mapcopy[i], map[i]; i++;} 
+int check_path(struct mapdata, mapfile)function > mapcopy = Malloc/calloc(sizeof(map(+1?)); int i =0; while(mapcopy){ strdup(mapcopy[i], map[i]; i++;} 
 mapcopy[i] = NULL; fill(mapdata, mapcopy);
+
+make_map(char *mapfile, int linecount) ändern
 
 Map:
 
@@ -25,4 +27,5 @@ Main:
 	maybe create a stuct called valid to safe valid values and compare against them
 
 
-
+DEFINE STRUCTS IN HEADER BEFORE FUNCTION PROTOTYPES
+structs nach oben!!!
