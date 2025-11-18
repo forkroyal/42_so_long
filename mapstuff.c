@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/18 17:06:13 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/18 17:08:40 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ char	**make_map(char *mapfile)
 }
 
 
-// make_map > nicht mapfile passen sondern struct dann spare ich line
+// make_map > nicht mapfile passen sondern struct dann spare ich lines
+// und muss es nicht nochmal ausführen
 // int line_count und char **map  und size_t last weil ich alles damit passe
 // line_count - 1 = mapdata.map_width 
 // map = mapdata.map
