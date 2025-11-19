@@ -2,27 +2,27 @@
 	MAPSTUFF.c notes darunter beachten
 	MAPSTUFF.c notes darunter beachten
 
-	function machen fillstruct darin make_map
-	muss ich dann die struct als pointer machen?
-	oder zumindest als pointer übergeben > ja das
+
 int check_path(struct mapdata, mapfile)function > mapcopy = Malloc/calloc(sizeof(map(+1?)); int i =0; while(mapcopy){ strdup(mapcopy[i], map[i]; i++;} 
 mapcopy[i] = NULL; fill(mapdata, mapcopy);
 
-make_map(char *mapfile, int linecount) > struct übergeben hat alles
 
 Map:
 
-	DONE! function to check if there are other signs then the ones allowed
+
 	check for valid path > floodfill
 	after valid path > check with strchr if collectables are left
-	DONE !function to find P (startingpos) or E
+
 
 Winwdow:
 
 Main:
-	check check_input
-	open
-	fill struct
+	DONE! check check_input
+	DONE! open
+	DONE! fill struct
+	DONE! check and find stuff
+	check path
+
 	check validity with against struct
 	maybe create a stuct called valid to safe valid values and compare against them
 
