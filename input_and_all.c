@@ -6,15 +6,15 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:17:34 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 13:59:42 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/19 14:06:32 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_input(int argc, char *argv);
-int	check_all(struct s_mapdata *data);
-int	count_all(struct s_mapdata *data);
+int		check_input(int argc, char *argv);
+int		check_all(struct s_mapdata *data);
+int		count_all(struct s_mapdata *data);
 void	find_all(struct s_mapdata *data);
 
 int	check_input(int argc, char *argv)
@@ -42,7 +42,7 @@ int	check_input(int argc, char *argv)
 
 int	check_all(struct s_mapdata *data)
 {
-	if (check_borders(data->map, data->map_width_x, data->map_height_y) == 0)
+	if (check_borders(data->map, data->map_width_x-1, data->map_height_y-1) == 0)
 	{
 		ft_printf("Error: Borders!\n");
 		return (0);
@@ -85,6 +85,6 @@ int	count_all(struct s_mapdata *data)
 
 void	find_all(struct s_mapdata *data)
 {
-	find_sign(data->map, 'p', data->playerposition_x, data->playerposition_y);
-	find_sign(data->map, 'e', data->exitposition_x, data->exitposition_y);
+	find_sign(data->map, 'p', &data->playerposition_x, &data->playerposition_y);
+	find_sign(data->map, 'e', &data->exitposition_x, &data->exitposition_y);
 }
