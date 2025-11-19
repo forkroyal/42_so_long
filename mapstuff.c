@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 16:13:54 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/19 16:19:24 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,34 +102,3 @@ char	**free_map(char **map)
 	free(map);
 	return (NULL);
 }
-
-// make_map > nicht mapfile passen sondern struct dann spare ich lines
-// und muss es nicht nochmal ausführen
-// int line_count und char **map  und size_t last weil ich alles damit passe
-// line_count - 1 = mapdata.map_width
-// map = mapdata.map
-// last - 1 = mapdata.map_height
-
-// void	fill(char **area, t_point size, t_point vec, char to_fill)
-// {
-// 	static int c_count = 0;
-// 	static int e_count = 0;
-// 	if (vec.y < 0 || vec.y >= size.y || vec.x < 0 || vec.x >= size.x || \
-// 		area[vec.y][vec.x] != to_fill)
-// 		return ;
-// 	if (area[vec.x][vec.y] == 'C')
-// 		c_count++;//coint got create this in the big struct
-// 	if (area[vec.x][vec.y] == 'E')
-// 		e_count++;//coint got
-// 	area[vec.y][vec.x] = 'F';
-// 	fill(area, size, (t_point){vec.x - 1, vec.y}, to_fill);
-// 	fill(area, size, (t_point){vec.x + 1, vec.y}, to_fill);
-// 	fill(area, size, (t_point){vec.x, vec.y - 1}, to_fill);
-// 	fill(area, size, (t_point){vec.x, vec.y + 1}, to_fill);
-
-// }
-
-// int	main(void)
-// {
-// 	ft_printf("%i\n", count_lines("aaa.ber"));
-// }

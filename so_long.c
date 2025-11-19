@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:38:11 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 16:12:41 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/19 16:18:31 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ int	main(int argc, char **argv)
 		return (1);
 	if (check_path(&mapdata, argv[1]) == 0)
 		return (1);
+	ft_printf("\n");
 	ft_printf("valid path\n");
 	ft_printf("valid path\n");
 	ft_printf("valid path\n");
+	ft_printf("\n");
 
 	// we are here
 
