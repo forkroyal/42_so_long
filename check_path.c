@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:18:54 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 13:01:16 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:04:06 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	fill_mapdata(struct s_mapdata *data, char *mapfile)
 	data->map = make_map(mapfile, data);
 	if (!data->map)
 		return (0);
+    
 	return (1);
 }

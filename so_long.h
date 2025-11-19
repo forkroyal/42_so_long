@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 13:00:55 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:14:20 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,15 @@ int			count_lines(char *mapfile);
 char		**make_map(char *mapfile, struct s_mapdata *data);
 int			count_of(char **map, char what_to_find);
 
-// borders.c
+// check_and_find.c
 int			check_borders(char **map, int xmax, int ymax);
 int			check_form(char **map);
 int			check_signs(char **map);
 void		find_sign(char **map, char to_find, int *x, int *y);
+
+// check_and_find_all.c
+void		find_all();
+void		check_all();
 
 // comandline_input.c
 int			check_input(int argc, char *argv);
