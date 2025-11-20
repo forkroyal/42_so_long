@@ -6,14 +6,14 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/20 14:30:11 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/20 15:06:36 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 int		count_lines(char *mapfile);
-char	**make_map(char *mapfile, struct s_mapdata *data);
+char	**make_map(char *mapfile, t_mapdata *data);
 int		count_of(char **map, char what_to_find);
 char	**free_map(char **map);
 
@@ -39,7 +39,7 @@ int	count_lines(char *mapfile)
 	return (line_count);
 }
 
-char	**make_map(char *mapfile, struct s_mapdata *data)
+char	**make_map(char *mapfile, t_mapdata *data)
 {
 	char	**map;
 	int		row;

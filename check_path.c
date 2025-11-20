@@ -6,17 +6,17 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:18:54 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 16:13:09 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/20 15:07:32 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_path(struct s_mapdata *data, char *mapfile);
-int	fill_mapdata(struct s_mapdata *data, char *mapfile);
-int	fill_count(struct s_mapdata *data, char **cpy_map, int x, int y);
+int	check_path(t_mapdata *data, char *mapfile);
+int	fill_mapdata(t_mapdata *data, char *mapfile);
+int	fill_count(t_mapdata *data, char **cpy_map, int x, int y);
 
-int	check_path(struct s_mapdata *data, char *mapfile)
+int	check_path(t_mapdata *data, char *mapfile)
 {
 	char	**map_copy;
 
@@ -32,7 +32,7 @@ int	check_path(struct s_mapdata *data, char *mapfile)
 	return (1);
 }
 
-int	fill_mapdata(struct s_mapdata *data, char *mapfile)
+int	fill_mapdata(t_mapdata *data, char *mapfile)
 {
 	data->map = make_map(mapfile, data);
 	if (!data->map)
@@ -45,7 +45,7 @@ int	fill_mapdata(struct s_mapdata *data, char *mapfile)
 	return (1);
 }
 
-int	fill_count(struct s_mapdata *data, char **cpy_map, int x, int y)
+int	fill_count(t_mapdata *data, char **cpy_map, int x, int y)
 {
 	static int	coins;
 	static int	exit;
