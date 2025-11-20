@@ -6,16 +6,19 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/20 15:10:00 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/20 15:11:54 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+// includes
 # include "libft/libft.h"
 
+// global MACROS
 # define VALIDSIGN "pce01"
+
 // struct to safe mapdata
 typedef struct s_mapdata
 {

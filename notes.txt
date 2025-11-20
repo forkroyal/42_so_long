@@ -16,6 +16,16 @@ Winwdow:
 		int	img_w_x;
 		int	img_h_y;
 	}	t_imagedata;
+	
+	create_game(t_mapdata, t_imagedata); 
+	-> mlx init() ? 0 > clear_all : load_pixmaps();
+	mlx_new_windows
+	fillmap
+	hookinit
+	mkxloop
+	return -> clear all
+	
+	
 
 Main:
 	DONE! check check_input
