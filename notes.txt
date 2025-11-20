@@ -1,31 +1,27 @@
-	MAPSTUFF.c notes darunter beachten
-	MAPSTUFF.c notes darunter beachten
-	MAPSTUFF.c notes darunter beachten
-
-
-int check_path(struct mapdata, mapfile)function > mapcopy = Malloc/calloc(sizeof(map(+1?)); int i =0; while(mapcopy){ strdup(mapcopy[i], map[i]; i++;} 
-mapcopy[i] = NULL; fill(mapdata, mapcopy);
-
-
-Map:
-
-
-	check for valid path > floodfill
-	after valid path > check with strchr if collectables are left
-
-
 Winwdow:
+	Header -> 2 structs:
+	
+	typedef struct s_windata
+	{
+		void			*mlx_ptr;
+		void			*win_ptr;
+		struct 	s_sdatamap 	*map;
+		t_image			*img;
+	}	t_windata;
+	
+	typedef struct s_imagedata
+	{
+		void	*img;
+		char 	*xmp_path;
+		int	img_w_x;
+		int	img_h_y;
+	}	t_imagedata;
 
 Main:
 	DONE! check check_input
 	DONE! open
 	DONE! fill struct
 	DONE! check and find stuff
-	check path
+	DONE! check path
 	DONE! free map function
-	delete ft_printf int free_map
-
-	check validity with against struct
-	maybe create a stuct called valid to safe valid values and compare against them
-
-
+	DONE! delete ft_printf int free_map
