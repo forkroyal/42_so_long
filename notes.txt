@@ -1,22 +1,4 @@
 Winwdow:
-	Header -> 2 structs:
-	
-	typedef struct s_windata
-	{
-		void			*mlx_ptr;
-		void			*win_ptr;
-		struct 	s_sdatamap 	*map;
-		t_image			*img;
-	}	t_windata;
-	
-	typedef struct s_imagedata
-	{
-		void	*img;
-		char 	*xmp_path;
-		int	img_w_x;
-		int	img_h_y;
-	}	t_imagedata;
-	
 	create_game(t_mapdata, t_imagedata); 
 	-> mlx init() ? 0 > clear_all : load_pixmaps();
 	mlx_new_windows
@@ -35,3 +17,19 @@ Main:
 	DONE! check path
 	DONE! free map function
 	DONE! delete ft_printf int free_map
+
+
+create map() give map and windowdata to it
+	declare t_imagedata[5], widgh and height -> with values * pixels
+	set windata->map to mapdata ->img to img
+				->win_ptr to NULL, -> mlxptr to mlx_init();
+									if it fails clear everything with CLEARFUNCTION
+	load pixmaps(windata);
+	data->winptr to mlx_new_windows(mlx_ptr, w, h, "name")
+		if it fails clear all things
+	fillmap with pixmaps
+	initialize hook
+	if mlxloop
+		clear all
+	clear all
+	return
