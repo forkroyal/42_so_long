@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:38:11 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/19 16:18:31 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/22 13:14:36 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 int	main(int argc, char **argv)
 {
-	struct s_mapdata	mapdata;
+	t_mapdata	mapdata;
 
-	if (check_input(argc, argv[1]) == 0)
-		return (1);
-	if (fill_mapdata(&mapdata, argv[1]) == 0)
-		return (1);
-	if (check_path(&mapdata, argv[1]) == 0)
-		return (1);
-	ft_printf("\n");
-	ft_printf("valid path\n");
-	ft_printf("valid path\n");
-	ft_printf("valid path\n");
-	ft_printf("\n");
-
+	if (!check_input(argc, argv[1]))
+		return (FALSE);
+	if (!fill_mapdata(&mapdata, argv[1]))
+		return (FALSE);
+	if (!check_path(&mapdata, argv[1]))
+		return (FALSE);
+	
 	// we are here
 
 	// int i = 0;

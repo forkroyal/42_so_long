@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/20 15:11:54 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/22 13:06:36 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 
 // global MACROS
 # define VALIDSIGN "pce01"
-
+# define PLAYER 'p'
+# define COIN 'c'
+# define EXIT 'e'
+# define TRUE 1
+# define FALSE 0
 // struct to safe mapdata
 typedef struct s_mapdata
 {
