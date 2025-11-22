@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:32:49 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/22 14:35:33 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/22 15:51:59 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		start_game(t_mapdata *mapdata, t_windata *win);
 void	del_dest_cl(t_windata *win, int code);
+void	my_xpm_to_img(t_windata *win);
 
 int	start_game(t_mapdata *mapdata, t_windata *win)
 {
@@ -28,9 +29,18 @@ int	start_game(t_mapdata *mapdata, t_windata *win)
 		del_dest_cl(win, 1);
 		return (FALSE);
 	}
-	
-	del_dest_cl(win, 0);
-	return (0);
+	my_xpm_to_img(win);
+	win->win_ptr = mlx_new_window(win->mlx_ptr, mapdata->map_width_x*PIXEL, mapdata->map_height_y*PIXEL, "so_long");
+	if (!win->win_ptr)
+	{
+		del_dest_cl(win, 1);
+		return (FALSE);
+	}
+	// fill the window
+	// hook function
+	// if loop > return
+	//del_dest_cl
+	//return
 }
 
 void	del_dest_cl(t_windata *win, int code)
@@ -60,4 +70,25 @@ void	del_dest_cl(t_windata *win, int code)
 		win->mlx_ptr = NULL;
 	}
 	exit(code);
+}
+
+void	my_xpm_to_img(t_windata *win)
+{
+	win->img[0].img = mlx_xpm_file_to_image(win->mlx_ptr,
+			"./pixmaps/background.xpm", &win->img->img_w_x, &win->img->img_h_y);
+	win->img[1].img = mlx_xpm_file_to_image(win->mlx_ptr,
+			"./pixmaps/border.xpm", &win->img->img_w_x, &win->img->img_h_y);
+	win->img[2].img = mlx_xpm_file_to_image(win->mlx_ptr,
+			"./pixmaps/player.xpm", &win->img->img_w_x, &win->img->img_h_y);
+	win->img[3].img = mlx_xpm_file_to_image(win->mlx_ptr, "./pixmaps/coin.xpm",
+			&win->img->img_w_x, &win->img->img_h_y);
+	win->img[4].img = mlx_xpm_file_to_image(win->mlx_ptr, "./pixmaps/exit.xpm",
+			&win->img->img_w_x, &win->img->img_h_y);
+	if (!win->img[0].img || !win->img[1].img || !win->img[2].img
+		|| !win->img[3].img || !win->img[4].img)
+	{
+		ft_printf("Error: in creating images!\n");
+		del_dest_cl(win, 1);
+		return ;
+	}
 }

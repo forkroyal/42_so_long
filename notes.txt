@@ -35,4 +35,4 @@ create map() give map and windowdata to it
 	return
 
 
-	game.c zeile 31 load pixmaps
+	game.c zeile 39 load pixmaps

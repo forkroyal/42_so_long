@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/22 14:26:02 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/22 15:20:51 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int				fill_count(t_mapdata *data, char **cpy_map, int x, int y);
 // game.c
 int				start_game(t_mapdata *mapdata, t_windata *win);
 void			del_dest_cl(t_windata *win, int code);
+void			my_xpm_to_img(t_windata *win);
 
 #endif
