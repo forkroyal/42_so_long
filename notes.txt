@@ -33,3 +33,6 @@ create map() give map and windowdata to it
 		clear all
 	clear all
 	return
+
+
+	game.c zeile 31 load pixmaps

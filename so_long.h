@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/22 13:22:46 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/22 14:26:02 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 // includes
 # include "libft/libft.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
+# include <fcntl.h>
+# include <mlx.h>
 
 // global MACROS
 # define VALIDSIGN "pce01"
@@ -25,6 +29,8 @@
 # define TRUE 1
 # define FALSE 0
 # define EXTENSION ".ber"
+# define PIXEL 25
+# define IMAGES 5
 
 // struct to safe mapdata
 typedef struct s_mapdata
@@ -55,16 +61,9 @@ typedef struct s_windata
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
-	t_mapdata	*map;
+	t_mapdata	*mapdata;
 	t_imagedata	*img;
 }				t_windata;
-
-// struct to safe player position
-typedef struct s_point
-{
-	int			x;
-	int			y;
-}				t_point;
 
 // mapstuff.c
 int				count_lines(char *mapfile);
@@ -88,5 +87,9 @@ void			find_all(t_mapdata *data);
 int				check_path(t_mapdata *data, char *mapfile);
 int				fill_mapdata(t_mapdata *data, char *mapfile);
 int				fill_count(t_mapdata *data, char **cpy_map, int x, int y);
+
+// game.c
+int				start_game(t_mapdata *mapdata, t_windata *win);
+void			del_dest_cl(t_windata *win, int code);
 
 #endif

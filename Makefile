@@ -32,7 +32,7 @@ re:		fclean all
 all:	${NAME}
 make:	make all
 aout:
-	cc *c libft/libft.a -g
+	cc *c libft/libft.a -g -lmlx -lX11 -lXext -lm
 
 
 .PHONY: clean fclean re all
