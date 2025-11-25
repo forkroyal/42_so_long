@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/25 16:55:52 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 00:30:47 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define COIN 'c'
 # define EXIT 'e'
 # define BORDER '1'
-# define BG	'0'
+# define BG '0'
 # define TRUE 1
 # define FALSE 0
 # define EXTENSION ".ber"
@@ -94,5 +94,6 @@ int				start_game(t_mapdata *mapdata, t_windata *win);
 void			del_dest_cl(t_windata *win, int code);
 void			my_xpm_to_img(t_windata *win);
 void			fillwindow(t_windata *win);
+void			fillimg(t_windata *win, int i, int j, int nr);
 
 #endif

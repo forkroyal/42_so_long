@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:32:49 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/25 17:03:40 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 00:32:47 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		start_game(t_mapdata *mapdata, t_windata *win);
 void	del_dest_cl(t_windata *win, int code);
 void	my_xpm_to_img(t_windata *win);
 void	fillwindow(t_windata *win);
+void	fillimg(t_windata *win, int i, int j, int nr);
 
 int	start_game(t_mapdata *mapdata, t_windata *win)
 {
@@ -107,17 +108,23 @@ void	fillwindow(t_windata *win)
 		while (win->mapdata->map[i][j])
 		{
 			if (win->mapdata->map[i][j] == BG)
-				mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[0].img, j * PIXEL, i * PIXEL);
+				fillimg(win, i, j, 0);
 			else if (win->mapdata->map[i][j] == BORDER)
-				mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[1].img, j * PIXEL, i * PIXEL);
+				fillimg(win, i, j, 1);
 			else if (win->mapdata->map[i][j] == PLAYER)
-				mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[2].img, j * PIXEL, i * PIXEL);
+				fillimg(win, i, j, 2);
 			else if (win->mapdata->map[i][j] == COIN)
-				mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[3].img, j * PIXEL, i * PIXEL);	
+				fillimg(win, i, j, 3);
 			else if (win->mapdata->map[i][j] == EXIT)
-				mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[4].img, j * PIXEL, i * PIXEL);
+				fillimg(win, i, j, 4);
 			j++;
 		}
 		i++;
 	}
+}
+
+void	fillimg(t_windata *win, int i, int j, int nr)
+{
+	mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, win->img[nr].img, j
+		* PIXEL, i * PIXEL);
 }
