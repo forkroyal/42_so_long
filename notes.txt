@@ -1,10 +1,11 @@
 gamehook.c
 
 	keysym -> asdw keys
+	check exit nach jedem key(); end_game()
 
 controls.c/rules
 
 	asdw moves
 	check valid move
-	check exit nach jedem key();
+	
 	print move
