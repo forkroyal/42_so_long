@@ -8,5 +8,6 @@ controls.c/rules
 	asdw moves
 	DONE! check valid move
 	check if i was on exit?? or also make walking on EXIT invalid if coin_c > 0
+	restore_exit();
 	
 	print move

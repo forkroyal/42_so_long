@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 00:37:13 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 12:47:30 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 13:58:08 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		my_hook(t_windata win);
 int		kill_all(t_windata *win);
 int		key(int keysym, t_windata *win);
 void	end_game(t_windata *win);
-int		valid_move(int x, int y, t_windata *win);
+int		valid_move(int x, int y, char **map);
 
 int	kill_all(t_windata *win)
 {
@@ -31,14 +31,16 @@ int	key(int keysym, t_windata *win)
 		return (0);
 	}
 	if (keysym == 'a')
-		// move_left()
-		if (keysym == 's')
-			// move_down()
-			if (keysym == 'd')
-				// move_right()
-				if (keysym == 'w')
-					// move_up()
-					fillwindow(win);
+		move_left(win);
+	if (keysym == 's')
+		move_down(win);
+	if (keysym == 'd')
+		move_right(win);
+	if (keysym == 'w')
+		move_up(win);
+	ft_printf("%i\n", win->mapdata->coin_c);
+	win->mapdata->map[win->mapdata->exitposition_x][win->mapdata->exitposition_y] = EXIT;
+	fillwindow(win);
 	end_game(win);
 	return (0);
 }
@@ -66,11 +68,9 @@ void	end_game(t_windata *win)
 	return ;
 }
 
-int	valid_move(int x, int y, t_windata *win)
+int	valid_move(int x, int y, char **map)
 {
-	if (win->mapdata->map[x][y] == BORDER)
+	if (map[x][y] == BORDER)
 		return (FALSE);
-	// if (win->mapdata->map[x][y] == COIN)
-	// 	win->mapdata->coin_c -= 1;
 	return (TRUE);
 }

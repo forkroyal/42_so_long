@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 12:41:28 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 13:29:47 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,12 @@ int				my_hook(t_windata win);
 int				kill_all(t_windata *win);
 int				key(int keysym, t_windata *win);
 void			end_game(t_windata *win);
-int				valid_move(int x, int y, t_windata *win);
+int				valid_move(int x, int y, char **map);
+
+// moves.c
+void			move_left(t_windata *win);
+void			move_down(t_windata *win);
+void			move_right(t_windata *win);
+void			move_up(t_windata *win);
+void			print_move(void);
 #endif
