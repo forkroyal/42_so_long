@@ -6,15 +6,16 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:18:54 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 02:18:09 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:09:04 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_path(t_mapdata *data, char *mapfile);
-int	fill_mapdata(t_mapdata *data, char *mapfile);
-int	fill_count(t_mapdata *data, char **cpy_map, int x, int y);
+int		check_path(t_mapdata *data, char *mapfile);
+int		fill_mapdata(t_mapdata *data, char *mapfile);
+int		fill_count(t_mapdata *data, char **cpy_map, int x, int y);
+void	restore_exit(t_mapdata *map);
 
 int	check_path(t_mapdata *data, char *mapfile)
 {
@@ -64,4 +65,10 @@ int	fill_count(t_mapdata *data, char **cpy_map, int x, int y)
 	fill_count(data, cpy_map, x + 1, y);
 	fill_count(data, cpy_map, x - 1, y);
 	return (data->coin_c == coin && data->exit_c == exit);
+}
+
+void	restore_exit(t_mapdata *map)
+{
+	if (map->map[map->exitposition_x][map->exitposition_y] != PLAYER)
+		map->map[map->exitposition_x][map->exitposition_y] = EXIT;
 }

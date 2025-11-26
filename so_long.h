@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 13:29:47 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 16:04:41 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void			find_all(t_mapdata *data);
 int				check_path(t_mapdata *data, char *mapfile);
 int				fill_mapdata(t_mapdata *data, char *mapfile);
 int				fill_count(t_mapdata *data, char **cpy_map, int x, int y);
+void			restore_exit(t_mapdata *map);
 
 // game.c
 int				start_game(t_mapdata *mapdata, t_windata *win);
