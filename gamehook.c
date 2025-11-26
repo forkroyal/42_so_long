@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 00:37:13 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 12:35:33 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 12:47:30 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		my_hook(t_windata win);
 int		kill_all(t_windata *win);
 int		key(int keysym, t_windata *win);
 void	end_game(t_windata *win);
-int		valid_move(int x, int y, char **map);
+int		valid_move(int x, int y, t_windata *win);
 
 int	kill_all(t_windata *win)
 {
@@ -66,9 +66,11 @@ void	end_game(t_windata *win)
 	return ;
 }
 
-int	valid_move(int x, int y, char **map)
+int	valid_move(int x, int y, t_windata *win)
 {
-	if (map[x][y] == BORDER)
+	if (win->mapdata->map[x][y] == BORDER)
 		return (FALSE);
+	// if (win->mapdata->map[x][y] == COIN)
+	// 	win->mapdata->coin_c -= 1;
 	return (TRUE);
 }
