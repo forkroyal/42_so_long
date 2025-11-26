@@ -2,3 +2,5 @@ MAKEFILE cleanen
 clean folder
 
 cleanup and push!
+
+chars Großschreibung 
