@@ -7,9 +7,13 @@ SOURCE = 	mapstuff.c \
 
 HEADER = so_long.h
 
-CFLAGS += -Wall -Wextra -Werror -g -lmlx -lX11 -lXext -lm
+CFLAGS += -Wall -Wextra -Werror -g 
+
+MINIFLAGS += -lmlx -lX11 -lXext -lm
 
 OBJECTS = $(SOURCE:.c=.o)
+
+LIBFT = libft/libft.a
 
 CC = cc
 
@@ -19,10 +23,7 @@ CREATION = ar rcs
 
 
 .c.o:
-	${CC} libft/libft.a ${CFLAGS} -I . -c $< -o ${<:.c=.o} 
-
-#${NAME}: ${OBJECTS} ${HEADER}
-#	${CREATION} ${NAME} ${OBJECTS}
+	${CC} ${CFLAGS} ${MINIFLAGS} -c $< -o ${<:.c=.o} ${LIBFT}
 
 clean:	
 	${RM} ${OBJECTS}
