@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 00:30:47 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 00:58:33 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@
 # define EXTENSION ".ber"
 # define PIXEL 25
 # define IMAGES 5
+
+# define ESC 65307
 
 // struct to safe mapdata
 typedef struct s_mapdata
@@ -96,4 +98,8 @@ void			my_xpm_to_img(t_windata *win);
 void			fillwindow(t_windata *win);
 void			fillimg(t_windata *win, int i, int j, int nr);
 
+// gamehook.c
+int				my_hook(t_windata win);
+int				kill_all(t_windata *win);
+int				key(int keysym, t_windata *win);
 #endif

@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:32:49 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 00:32:47 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 01:51:02 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ int	start_game(t_mapdata *mapdata, t_windata *win)
 		return (FALSE);
 	}
 	fillwindow(win);
-	// hook function
-	// if loop > return
-	// del_dest_cl
-	// return
+	my_hook(*win);
+	if (mlx_loop(win->mlx_ptr))
+		return (del_dest_cl(win, 1), FALSE);
+	del_dest_cl(win, 0);
+	return (TRUE);
 }
 
 void	del_dest_cl(t_windata *win, int code)
@@ -83,7 +84,7 @@ void	my_xpm_to_img(t_windata *win)
 			&win->img->img_w_x, &win->img->img_h_y);
 	win->img[2].img = mlx_xpm_file_to_image(win->mlx_ptr, "./pixmaps/P.xpm",
 			&win->img->img_w_x, &win->img->img_h_y);
-	win->img[3].img = mlx_xpm_file_to_image(win->mlx_ptr, "NV./pixmaps/.xpm",
+	win->img[3].img = mlx_xpm_file_to_image(win->mlx_ptr, "./pixmaps/NV.xpm",
 			&win->img->img_w_x, &win->img->img_h_y);
 	win->img[4].img = mlx_xpm_file_to_image(win->mlx_ptr, "./pixmaps/E.xpm",
 			&win->img->img_w_x, &win->img->img_h_y);
