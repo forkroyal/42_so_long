@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 00:37:13 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 14:57:54 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 15:35:48 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	kill_all(t_windata *win)
 	del_dest_cl(win, 0);
 	return (0);
 }
+
 int	key(int keysym, t_windata *win)
 {
 	if (keysym == ESC)

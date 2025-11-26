@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 13:29:05 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 15:01:29 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/26 15:36:25 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	move_up(t_windata *win)
 	win->mapdata->playerposition_x -= 1;
 	print_move();
 }
+
 void	print_move(void)
 {
 	static int	c_moves;
