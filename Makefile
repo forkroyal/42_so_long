@@ -1,4 +1,4 @@
-NAME = solong
+NAME = so_long
 
 SOURCE = 	check_and_find.c \
 			check_path.c \
@@ -23,8 +23,6 @@ CC = cc
 
 RM = rm -f
 
-CREATION = ar rcs
-
 
 %.o: %.c
 	${CC} ${CFLAGS} $ -c $< -o $@
@@ -37,8 +35,5 @@ fclean:	clean
 re:		fclean all
 all:	${NAME}
 make:	make all
-aout:
-	cc *c libft/libft.a -g -lmlx -lX11 -lXext -lm -Wall -Wextra -Werror
-
 
 .PHONY: clean fclean re all
