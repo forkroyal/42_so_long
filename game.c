@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:32:49 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 02:21:34 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:25:39 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	start_game(t_mapdata *mapdata, t_windata *win)
 	}
 	my_xpm_to_img(win);
 	win->win_ptr = mlx_new_window(win->mlx_ptr, mapdata->map_width_x * PIXEL,
-			mapdata->map_height_y * PIXEL, "so_long");
+			mapdata->map_height_y * PIXEL, WINNAME);
 	if (!win->win_ptr)
 	{
 		del_dest_cl(win, 1);

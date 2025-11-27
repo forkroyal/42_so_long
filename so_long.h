@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:06:29 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 16:04:41 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:25:21 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include <mlx.h>
 
 // global MACROS
-# define VALIDSIGN "pce01"
-# define PLAYER 'p'
-# define COIN 'c'
-# define EXIT 'e'
+# define VALIDSIGN "PCE01"
+# define PLAYER 'P'
+# define COIN 'C'
+# define EXIT 'E'
 # define BORDER '1'
 # define BG '0'
 # define TRUE 1
@@ -32,6 +32,7 @@
 # define EXTENSION ".ber"
 # define PIXEL 25
 # define IMAGES 5
+# define WINNAME "so_long"
 
 # define ESC 65307
 
