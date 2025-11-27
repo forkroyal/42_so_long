@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:18:54 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 16:09:04 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:29:24 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_path(t_mapdata *data, char *mapfile)
 			data->playerposition_y) == FALSE)
 	{
 		map_copy = free_map(map_copy);
-		ft_printf("Error: Invalid path!\n");
+		ft_printf("Error:\nInvalid path!\n");
 		return (FALSE);
 	}
 	map_copy = free_map(map_copy);

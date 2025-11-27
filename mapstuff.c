@@ -6,7 +6,7 @@
 /*   By: fsitter <fsitter@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:40:27 by fsitter           #+#    #+#             */
-/*   Updated: 2025/11/26 02:19:20 by fsitter          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:31:00 by fsitter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ char	**make_map(char *mapfile, t_mapdata *data)
 
 	fd = open(mapfile, O_RDONLY);
 	if (fd < 0)
-		return (ft_putstr_fd("Error: filediscriptor\n", 2), NULL);
+		return (ft_putstr_fd("Error:\nFilediscriptor\n", 2), NULL);
 	data->map_height_y = count_lines(mapfile);
 	map = malloc(sizeof(char *) * (data->map_height_y + 1));
 	if (!map)
-		return (ft_putstr_fd("Error: malloc error\n", 2), NULL);
+		return (ft_putstr_fd("Error:\nMalloc error\n", 2), NULL);
 	row = 0;
 	while (row < data->map_height_y)
 	{
